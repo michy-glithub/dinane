@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - EduPath</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:Poppins, Arial, sans-serif; }
+    body { background:#111; color:#eee; }
+    .main {
+      background: linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images.jpeg');
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      padding-bottom: 50px;
+    }
+    .navbar {
+      width:1200px;
+      margin:auto;
+      margin-left: 40px;
+      height:85px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .logo { 
+        color:#ffa519; 
+        font-size:45px; 
+        font-weight:bold;
+        margin-right: 60px;
+    
+    }
+    .menu ul {
+      display:flex;
+      list-style:none;
+      gap:40px;
+    }
+    .menu ul li a {
+      text-decoration:none;
+      color:rgb(209,223,223);
+      font-weight:bold;
+      transition:0.3s;
+    }
+    .menu ul li a:hover { color:orange; }
+    header { text-align:center; padding:50px 20px 30px; }
+    header h1 { font-size:50px; color:#ff7200; margin-bottom:10px; }
+    header p { font-size:20px; max-width:800px; margin:auto; color:#f0f0f0; }
+    .container { max-width:800px; margin:0 auto; padding:20px; }
+    .contact-form {
+      background: rgba(0,0,0,0.7);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+    }
+    .contact-form h2 { color:#ff7200; margin-bottom:20px; font-size:28px; text-align:center; }
+    .contact-form input, .contact-form textarea {
+      width:100%;
+      padding:12px;
+      margin-bottom:20px;
+      border:none;
+      border-bottom:2px solid #ff7200;
+      background:transparent;
+      color:#eee;
+      font-size:16px;
+      border-radius:5px;
+    }
+    .contact-form input:focus, .contact-form textarea:focus { outline:none; border-color:orange; }
+    .contact-form textarea { resize:none; height:120px; }
+    .contact-form button {
+      background:#ff7200;
+      color:#000;
+      font-weight:bold;
+      padding:12px 25px;
+      border:none;
+      border-radius:10px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+    .contact-form button:hover { background:white; color:#000; }
+
+    /* Social Media Section */
+    .social {
+      text-align: center;
+      margin: 40px 0;
+    }
+    .social h2 {
+      color:#ff7200;
+      margin-bottom:15px;
+      font-size:24px;
+    }
+    .social a {
+      display: inline-block;
+      margin: 0 12px;
+      font-size: 28px;
+      color: #eee;
+      transition: 0.3s;
+    }
+    .social a:hover { color: #ff7200; transform: scale(1.2); }
+
+    footer {
+      text-align:center;
+      padding:25px;
+      background:rgba(0,0,0,0.85);
+      color:#ccc;
+      border-top:1px solid rgba(255,255,255,0.2);
+      margin-top:30px;
+    }
+    @media(max-width:900px) { header h1 { font-size:40px; } .contact-form h2 { font-size:24px; } }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="logo">EduPath</div>
+      <div class="menu">
+        <ul>
+          <li><a href="#" id="logoutLink">Logout</a></li>
+          <li><a href="matric.html">Matric Resources</a></li>
+          <li><a href="career.html">Careers Guidance</a></li>
+          <li><a href="uni.html">Universities & Colleges</a></li>
+          <li><a href="busarie.html">Bursaries & Scholarships</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="student.html">Student Stories</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Page Header -->
+    <header>
+      <h1>Contact EduPath</h1>
+      <p>Have questions or need guidance? Reach out to us and we'll help you navigate your education journey.</p>
+    </header>
+
+    <!-- Contact Form -->
+    <div class="container">
+      <div class="contact-form">
+        <h2>Get in Touch</h2>
+        <form action="#" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <input type="text" name="subject" placeholder="Subject" required>
+          <textarea name="message" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Social Media Section -->
+    <div class="social">
+      <h2>Connect with Us</h2>
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://wa.me/1234567890" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 EduPath | Designed for Students</p>
+    </footer>
+  </div>
+  <script>
+    (function(){
+      try{
+        const token = localStorage.getItem('idToken');
+        if (!token) return window.location.href = 'homeeee.html';
+        const logout = document.getElementById('logoutLink');
+        if (logout) logout.addEventListener('click', () => { localStorage.removeItem('idToken'); window.location.href = 'homeeee.html'; });
+      }catch(e){ window.location.href = 'homeeee.html'; }
+    })();
+  </script>
+</body>
+</html>
+

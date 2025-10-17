@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Stories - EduPath</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:Poppins, Arial, sans-serif; }
+    body { background:#1a0256; color:#eee; }
+
+    .main {
+      background: linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('stories-bg.jpeg');
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      padding-bottom: 50px;
+    }
+
+    /* Navbar */
+    .navbar {
+      width: 100%;
+      padding: 0 40px;
+      height: 85px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    .logo {
+      color:#ffa519;
+      font-size:45px;
+      font-weight:bold;
+      margin-right:60px;
+    }
+    .menu ul {
+      display:flex;
+      list-style:none;
+      gap:40px;
+    }
+    .menu ul li a {
+      text-decoration:none;
+      color:rgb(209,223,223);
+      font-weight:bold;
+      transition:0.3s;
+    }
+    .menu ul li a:hover { color:orange; }
+
+    /* Header */
+    header { text-align:center; padding:60px 20px 30px; }
+    header h1 { font-size:50px; color:#ff7200; margin-bottom:10px; }
+    header p { font-size:20px; max-width:800px; margin:auto; color:#f0f0f0; }
+
+    /* Stories Grid */
+    .stories-container {
+      max-width:1100px;
+      margin:40px auto;
+      padding:20px;
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap:25px;
+    }
+    .story-card {
+      background: rgba(0,0,0,0.7);
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+      text-align:center;
+      transition: transform 0.3s;
+    }
+    .story-card:hover { transform: translateY(-5px); }
+    .story-card img {
+      width:100px;
+      height:100px;
+      border-radius:50%;
+      object-fit:cover;
+      margin-bottom:15px;
+      border:3px solid #ff7200;
+    }
+    .story-card h3 {
+      color:#ffa519;
+      font-size:22px;
+      margin-bottom:10px;
+    }
+    .story-card p {
+      font-size:15px;
+      line-height:1.6;
+      color:#ddd;
+    }
+
+    /* Footer */
+    footer {
+      text-align:center;
+      padding:25px;
+      background:rgba(0, 0, 1, 0.85);
+      color:#ccc;
+      border-top:1px solid rgba(255,255,255,0.2);
+      margin-top:40px;
+    }
+
+    @media(max-width:900px) {
+      header h1 { font-size:38px; }
+      header p { font-size:18px; }
+    }
+  </style>
+</head>
+<body>
+  <script>
+    // require signed-in user and replace Home with Logout
+    (function(){
+      try{
+        const token = localStorage.getItem('idToken');
+        if (!token) return window.location.href = 'homeeee.html';
+        const logout = document.getElementById('logoutLink');
+        if (logout) logout.addEventListener('click', () => { localStorage.removeItem('idToken'); window.location.href = 'homeeee.html'; });
+      }catch(e){ window.location.href = 'homeeee.html'; }
+    })();
+  </script>
+  <div class="main">
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="logo"><a href="homeeee.html" style="text-decoration:none; color:#ffa519;">EduPath</a></div>
+      <div class="menu">
+        <ul>
+          <li><a href="#" id="logoutLink">Logout</a></li>
+          <li><a href="matric.html">Matric Resources</a></li>
+          <li><a href="career.html">Careers Guidance</a></li>
+          <li><a href="uni.html">Universities & Colleges</a></li>
+          <li><a href="busarie.html">Bursaries & Scholarships</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="student.html">Student Stories</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Page Header -->
+    <header>
+      <h1>Student Stories</h1>
+      <p>Hear from students across South Africa who are shaping their futures with determination, passion, and the help of EduPath.</p>
+    </header>
+
+    <!-- Stories Section -->
+    <div class="stories-container">
+      <div class="story-card">
+        <img src="NOBILE.jpg" alt="Student 1">
+        <h3>Ncobile K.</h3>
+        <p>"EduPath guided me to apply for the NSFAS bursary and now I’m the first in my family to attend university. I’m studying Computer Science at Wits."</p>
+      </div>
+      <div class="story-card">
+        <img src="KEO.jpg" alt="Student 2">
+        <h3>Kegotshepile P.</h3>
+        <p>"With the resources from EduPath, I found the perfect career path in IT. I’m now training at UCT and loving every moment of helping others."</p>
+      </div>
+      <div class="story-card">
+        <img src="Noka.jpg" alt="Student 3">
+        <h3>Kamogelo N.</h3>
+        <p>"After struggling with matric subjects, EduPath’s resources helped me improve. Today, I’m thriving at UCT as a Law student."</p>
+      </div>
+      <div class="story-card">
+        <img src="dina.jpg" alt="Student 4">
+        <h3>Dinane K.</h3>
+        <p>"EduPath introduced me to several scholarships. I received one from Funza Lushaka and now I’m pursuing my passion for teaching."</p>
+      </div>
+      <div class="story-card">
+        <img src="Katlego.jpg" alt="Student 5">
+        <h3>Katleho M.</h3>
+        <p>"EduPath inspired me to chase my dream in Engineering. Today, I’m studying Electrical Engineering at TUT."</p>
+      </div>
+      <div class="story-card">
+        <img src="kgosi.jpg" alt="Student 6">
+        <h3>Kgose Erin M.</h3>
+        <p>"EduPath introduced me to several universities. I got admitted and now I’m pursuing my passion for ICT at UMP."</p>
+      </div>
+      <div class="story-card">
+        <img src="Kabelo.jpg" alt="Student 7">
+        <h3>Kabelo.</h3>
+        <p>"Thanks to EduPath, I found the Funza Lushaka bursary. I am now studying to become a teacher and give back to my community."</p>
+      </div>
+      <div class="story-card">
+        <img src="divine.jpg" alt="Student 8">
+        <h3>Divine N.</h3>
+        <p>"EduPath helped me discover opportunities in sports scholarships. I’m now on a soccer scholarship at University of Pretoria."</p>
+      </div>
+      <div class="story-card">
+        <img src="Jane.jpg" alt="Student 9">
+        <h3>Jane S.</h3>
+        <p>"I always wanted to be a doctor, but didn’t know how to fund my studies. EduPath showed me medical bursary options, and today I’m at Wits Medical School."</p>
+      </div>
+      <div class="story-card">
+        <img src="monoshi.jpg" alt="Student 10">
+        <h3>Monoshi M.</h3>
+        <p>"EduPath gave me access to career guidance tools that matched me with my passion for accounting. I’m now studying Accounting at WITS."</p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 EduPath | Inspiring Students, Building Futures</p>
+    </footer>
+  </div>
+</body>
+</html>
+
+

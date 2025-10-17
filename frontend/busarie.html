@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bursaries & Scholarships in South Africa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family: 'Poppins', Arial, sans-serif;}
+    body { background: #111; color: #eee;}
+    .main {
+      min-height: 100vh;
+      padding-bottom: 50px;
+      background: linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('Bursaries.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    /* Navbar */
+    .navbar {
+      width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+    }
+    .logo { color: #ffa519;
+         font-size: 45px; 
+         font-weight: bold;
+         margin-right: 60px;
+        }
+    .menu ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+    .menu ul li a {
+      text-decoration: none;
+      color: #d1dfdf;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .menu ul li a:hover { color: orange; }
+    header {
+      text-align: center;
+      padding: 50px 20px 30px;
+    }
+    header h1 { font-size: 50px; color: #ff7200; margin-bottom: 10px;}
+    header p { font-size: 20px; max-width: 800px; margin: auto; color:#f0f0f0;}
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .bursary-section {
+      background: rgba(0,0,0,0.75);
+      padding: 25px;
+      border-radius: 15px;
+      margin-bottom: 25px;
+    }
+    .bursary-section h2 {
+      color: #ff7200;
+      margin-bottom: 15px;
+    }
+    .bursary-section ul {
+      list-style: square;
+      margin-left: 20px;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+    .bursary-section a {
+      color: #66ccff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .bursary-section a:hover {
+      color: #ff9933;
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: rgba(0,0,0,0.85);
+      color: #ccc;
+      border-top: 1px solid rgba(255,255,255,0.2);
+    }
+    @media(max-width:900px){
+      header h1 { font-size: 40px;}
+      .menu ul { gap: 15px; }
+    }
+    @media(max-width:700px){
+      .menu { display:none;}
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="logo">EduPath</div>
+      <div class="menu">
+        <ul>
+          <li><a href="#" id="logoutLink">Logout</a></li>
+          <li><a href="matric.html">Matric Resources</a></li>
+          <li><a href="career.html">Careers Guidance</a></li>
+          <li><a href="uni.html">Universities & Colleges</a></li>
+          <li><a href="busarie.html">Bursaries & Scholarships</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="student.html">Student Stories</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+      <h1>Bursaries & Scholarships in South Africa</h1>
+      <p>Discover financial opportunities to support your studies in universities and colleges for 2026.</p>
+    </header>
+
+    <div class="container">
+      <!-- NSFAS -->
+      <div class="bursary-section">
+        <h2>1. National Student Financial Aid Scheme (NSFAS)</h2>
+        <ul>
+          <li>Provides financial aid to eligible South African students at public universities and TVET colleges.</li>
+          <li>Eligibility: South African citizens with household income below R350,000 per year.</li>
+          <li>Application: <a href="https://www.nsfas.org.za" target="_blank">www.nsfas.org.za</a></li>
+        </ul>
+      </div>
+
+      <!-- Funza Lushaka -->
+      <div class="bursary-section">
+        <h2>2. Funza Lushaka Bursary</h2>
+        <ul>
+          <li>Supports students pursuing teaching qualifications in scarce skills areas.</li>
+          <li>Eligibility: South African citizens under 30, registered for B.Ed or PGCE program.</li>
+          <li>Application: <a href="https://www.funzalushaka.doe.gov.za" target="_blank">www.funzalushaka.doe.gov.za</a></li>
+        </ul>
+      </div>
+
+      <!-- StudyTrust -->
+      <div class="bursary-section">
+        <h2>3. StudyTrust Bursaries</h2>
+        <ul>
+          <li>Offers bursaries in partnership with South African and international organizations.</li>
+          <li>Eligibility: Academically deserving students needing financial assistance.</li>
+          <li>Application: <a href="https://studytrust.org.za/bursary-applications/" target="_blank">studytrust.org.za</a></li>
+        </ul>
+      </div>
+
+      <!-- Investec -->
+      <div class="bursary-section">
+        <h2>4. Investec Tertiary Bursary Programme</h2>
+        <ul>
+          <li>Financial support for students pursuing degrees in commerce, engineering, and science.</li>
+          <li>Eligibility: South African citizens with strong academic records.</li>
+          <li>Application: <a href="https://www.investec.com/en_za/welcome-to-investec/sustainability/our-community/bursaries/tertiary-bursary-programme.html" target="_blank">investec.com</a></li>
+        </ul>
+      </div>
+
+      <!-- Sasol -->
+      <div class="bursary-section">
+        <h2>5. Sasol Bursary Programme</h2>
+        <ul>
+          <li>Comprehensive financial and developmental support to students in engineering and science.</li>
+          <li>Eligibility: South African citizens with strong academic background.</li>
+          <li>Application: <a href="https://www.sasolbursaries.com/welcome/" target="_blank">sasolbursaries.com</a></li>
+        </ul>
+      </div>
+
+      <!-- SARB -->
+      <div class="bursary-section">
+        <h2>6. South African Reserve Bank (SARB) External Bursary Scheme</h2>
+        <ul>
+          <li>Supports undergraduate students pursuing degrees related to SARB functions.</li>
+          <li>Eligibility: SA students under 30 with an average of 70% in Grade 12, financial need.</li>
+          <li>Application: <a href="https://www.resbank.co.za/en/home/publications/publication-detail-pages/bursary/2025/external-2026" target="_blank">resbank.co.za</a></li>
+        </ul>
+      </div>
+
+      <!-- Netcare -->
+      <div class="bursary-section">
+        <h2>7. Netcare Bursary</h2>
+        <ul>
+          <li>Financial assistance to students pursuing careers in healthcare (nursing, EMS).</li>
+          <li>Eligibility: South African citizens committed to healthcare careers.</li>
+          <li>Application: <a href="https://www.zabursaries.co.za/" target="_blank">zabursaries.co.za</a></li>
+        </ul>
+      </div>
+
+      <!-- Mandela Rhodes -->
+      <div class="bursary-section">
+        <h2>8. Mandela Rhodes Foundation Scholarship</h2>
+        <ul>
+          <li>Prestigious scholarship combining financial support with leadership development.</li>
+          <li>Eligibility: African citizens under 30 pursuing postgraduate studies in SA.</li>
+          <li>Application: <a href="https://www.mandelarhodes.org/" target="_blank">mandelarhodes.org</a></li>
+        </ul>
+      </div>
+
+      <!-- France-SA Scholarship -->
+      <div class="bursary-section">
+        <h2>9. France-South Africa Scholarship Programme</h2>
+        <ul>
+          <li>Opportunities to pursue Master's or Doctoral studies in France.</li>
+          <li>Eligibility: South African citizens with strong academic record.</li>
+          <li>Application: <a href="https://www.gov.za/" target="_blank">gov.za</a></li>
+        </ul>
+      </div>
+
+      <!-- ISACA SA -->
+      <div class="bursary-section">
+        <h2>10. ISACA South Africa Chapter Scholarship</h2>
+        <ul>
+          <li>Scholarships for students pursuing information systems related degrees.</li>
+          <li>Eligibility: Enrolled in relevant SA programs.</li>
+          <li>Application: <a href="https://www.isaca.org/chapters/south-africa" target="_blank">isaca.org</a></li>
+        </ul>
+      </div>
+
+      <!-- Cape Tercentenary Foundation -->
+      <div class="bursary-section">
+        <h2>11. Cape Tercentenary Foundation Scholarships</h2>
+        <ul>
+          <li>Funding for postgraduate studies in arts, culture, and environmental sciences.</li>
+          <li>Eligibility: South African citizens pursuing research in specified fields.</li>
+          <li>Application: <a href="https://en.wikipedia.org/wiki/The_Cape_Tercentenary_Foundation" target="_blank">en.wikipedia.org/wiki/The_Cape_Tercentenary_Foundation</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <footer>
+      <p>&copy; 2025 EduPath | Designed for Students</p>
+    </footer>
+  </div>
+  <script>
+    (function(){
+      try{
+        const token = localStorage.getItem('idToken');
+        if (!token) return window.location.href = 'homeeee.html';
+        const logout = document.getElementById('logoutLink');
+        if (logout) logout.addEventListener('click', () => { localStorage.removeItem('idToken'); window.location.href = 'homeeee.html'; });
+      }catch(e){ window.location.href = 'homeeee.html'; }
+    })();
+  </script>
+</body>
+</html>
+
+

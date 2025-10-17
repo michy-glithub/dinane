@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matric Navigator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>*{
+        margin: 0;
+        padding: 0;
+    }
+    .main{
+        background:linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%),url(images.jpeg);
+        background-size: cover;
+        min-height: 100vh;
+        padding-bottom: 50px;
+    }
+    .navbar{
+       width:1200px;
+       height:85px;
+       margin:auto; 
+    }
+    .icon{
+        width: 200px;
+        float: left;
+        height: 70px;
+    }
+    .logo{
+      color: rgb(255, 165, 19);  
+      font-size: 45px;
+      font-family: Arial;
+      padding-left: 1px;
+      float: left;
+      padding-top: 15px; 
+    }
+    .menu{
+        width: 400px;
+        float: left;
+        height: 70px;
+    }
+    ul{
+        float: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    ul li{
+        list-style: none;
+        margin-left: 50px;
+        margin-top: 27px;
+        font-size: 17px;
+    }
+    ul li a{
+        text-decoration: none;
+        color: rgb(209, 223, 223);
+        font-family: Arial;
+        font-weight: bold;
+        transition:  0.4s ease-in-out ;
+
+    }
+    ul li a:hover{
+        color: orange;
+
+   
+        
+     }
+     .content{
+        width: 1200px;
+        height: auto;
+        margin: auto;
+        color: white;
+        position: relative;
+        text-align: left;
+        padding-left: 20px;
+     }
+     .content p{
+        text-align: left;
+        margin-left: 20px;
+        font-family: Arial,sans-serif;
+     }
+     .content .par{
+        padding-left: 20px;
+        padding-bottom:25px;
+        font-family: Arial;
+        letter-spacing: 1.2px;
+        line-height: 30px;
+     }
+     .content .cn{
+        width: 160px;
+        height: 40px;
+        background: #ff7200;
+        border: none;
+        margin-bottom: 10px;
+        margin-left: 20px;
+        font-size: 18px ;
+        border-radius: 10px; 
+        cursor: pointer;
+        transition: .4s ease;
+             
+     }
+     .content.cn a{
+        text-decoration: none;
+        color: #000;
+        transition: 3s ease;
+     }
+     .cn:hover{
+        background-color: white;
+     }
+     .content span{
+        color: rgb(255, 140, 0);
+        font-size: 60px;
+     }
+      header {
+      text-align: center;
+      padding: 70px 20px 40px 20px;
+    }
+
+    header h1 {
+      font-size: 50px;
+      color: #ff7200;
+      margin-bottom: 15px;
+    }
+
+    header p {
+      font-size: 20px;
+      color: #f0f0f0;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    /* Section Styles */
+    section {
+      background: rgba(0,0,0,0.7);
+      padding: 30px 40px;
+      border-radius: 20px;
+      margin-bottom: 40px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+      transition: transform 0.3s;
+      word-wrap: break-word;
+    
+    }
+
+    section:hover {
+      transform: translateY(-5px);
+    }
+
+    section h2 {
+      font-size: 30px;
+      color: #ff7200;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    section p, section ul {
+      font-size: 17px;
+      color: #eee;
+    }
+
+    section ul {
+      margin: 15px 0 0 0;
+      padding-left: 20px;
+      list-style-type: disc;
+    }
+    
+    section ul li{
+        margin-bottom: 12px;
+        line-height: 1.6;
+    }
+    /* Resources Buttons */
+    .resources a {
+      display: inline-block;
+      margin: 10px 10px 0 0;
+      padding: 10px 18px;
+      background: #ff7200;
+      color: black;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .resources a:hover {
+      background: white;
+      color: black;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: rgba(0,0,0,0.85);
+      color: #ccc;
+      border-top: 1px solid rgba(255,255,255,0.2);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      header h1 {
+        font-size: 40px;
+      }
+
+      section h2 {
+        font-size: 26px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .resources a {
+        margin-bottom: 10px;
+      }
+    }
+     </style>
+    
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">EduPath</h2>    
+            </div>
+        <div class="menu">
+          <ul>
+          <li><a href="#" id="logoutLink">Logout</a></li>
+           <li><a href="matric.html">Matric Resources</a></li>
+           <li><a href="career.html">Careers Guidence</a></li>
+           <li><a href="uni.html">Universities & Colleges</a></li>
+           <li><a href="busarie.html">Bursaries & Scholarship</a></li>
+           <li><a href="contact.html">Contact</a></li>
+           <li><a href="student.html">Student Stories</a></li>
+        </ul>
+     </div>
+     
+    </div><header>
+    <h1>Career Guidance</h1>
+    <p>Your future starts with the right choice – explore, learn, and grow with confidence!</p>
+  </header>
+
+  <div class="container">
+    <!-- Introduction -->
+    <section>
+      <h2>Why Career Guidance Matters</h2>
+      <p>Choosing the right career is one of the most important decisions in life. Career guidance helps you explore opportunities, understand your strengths, and plan for a successful and fulfilling future.</p>
+    </section>
+
+    <!-- Career Options -->
+    <section>
+      <h2>Popular Career Options</h2>
+      <ul>
+        <li><strong>Science & Technology:</strong> Engineering, Medicine, IT, Data Science</li>
+        <li><strong>Business & Management:</strong> Finance, Marketing, Entrepreneurship</li>
+        <li><strong>Creative Arts:</strong> Design, Media, Writing, Performing Arts</li>
+        <li><strong>Social Sciences:</strong> Law, Education, Psychology, Social Work</li>
+        <li><strong>Skilled Trades:</strong> Electrical, Mechanical, Construction, Culinary</li>
+      </ul>
+    </section>
+
+    <!-- How to Choose -->
+    <section>
+      <h2>How to Choose the Right Career</h2>
+      <p>Consider the following steps when making a decision:</p>
+      <ul>
+        <li>Identify your interests, passions, and skills</li>
+        <li>Research different career fields and growth opportunities</li>
+        <li>Match careers with your strengths and personality</li>
+        <li>Seek advice from mentors, teachers, or career counselors</li>
+        <li>Set short-term and long-term goals</li>
+      </ul>
+    </section>
+
+    <!-- Future Skills -->
+    <section>
+      <h2>Skills for the Future</h2>
+      <ul>
+        <li>Critical Thinking & Problem Solving</li>
+        <li>Communication & Collaboration</li>
+        <li>Adaptability & Creativity</li>
+        <li>Digital Literacy & Technology Skills</li>
+        <li>Emotional Intelligence & Leadership</li>
+      </ul>
+    </section>
+
+    <!-- Resources -->
+    <section class="resources">
+      <h2>Career Resources</h2>
+      <p>Explore these resources to learn more:</p>
+      <a href="https://www.careerguide.com" target="_blank">CareerGuide</a>
+      <a href="https://www.myfuture.com" target="_blank">MyFuture</a>
+      <a href="https://www.mindtools.com" target="_blank">Mind Tools</a>
+    </section>
+  </div>
+  <script>
+    (function(){
+      try{
+        const token = localStorage.getItem('idToken');
+        if (!token) return window.location.href = 'homeeee.html';
+        const logout = document.getElementById('logoutLink');
+        if (logout) logout.addEventListener('click', () => { localStorage.removeItem('idToken'); window.location.href = 'homeeee.html'; });
+      }catch(e){ window.location.href = 'homeeee.html'; }
+    })();
+  </script>
+
+  <footer>
+    <p>&copy; 2025 EduPath | Designed for Students</p>
+  </footer>
+
+    
+    </body>
+</html>
+
+

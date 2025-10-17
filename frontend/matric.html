@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matric Navigator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Poppins", Arial, sans-serif;
+      color: #f1f1f1;
+      background-color: #000;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .main {
+      width: 100%;
+      background: linear-gradient(to top, rgba(0,0,0,0.6)50%, rgba(0,0,0,0.6)50%), url(math.jpg);
+      background-position: center;
+      background-size: cover;
+      flex: 1;
+      padding-bottom: 50px;
+    }
+    .navbar {
+      width: 1200px;
+      max-width: 1200px;
+      height: 85px;
+      margin:0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      color: #ffa513;
+      font-size: 40px;
+      font-weight: 700;
+      margin-right: 60px;
+    }
+    .menu ul {
+      display: flex;
+      gap: 35px;
+      align-items: center;
+    }
+    .menu ul li {
+      list-style: none;
+    }
+    .menu ul li a {
+      text-decoration: none;
+      color: #d1dfdf;
+      font-weight: 600;
+      font-size: 15px;
+      transition: 0.3s ease-in-out;
+    }
+    .menu ul li a:hover {
+      color: orange;
+    }
+    .content {
+      width: 80%;
+      margin: 40px auto;
+      background: rgba(0,0,0,0.7);
+      padding: 30px;
+      border-radius: 12px;
+      color: #e8e8e8;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    .content h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #ffa513;
+      font-weight: 700;
+    }
+    .content ul {
+      margin-left: 25px;
+    }
+    .content ul li {
+      margin: 12px 0;
+    }
+    .content strong {
+      color: #ffcc66;
+    }
+    .content a {
+      color: #66ccff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s ease-in-out;
+    }
+    .content a:hover {
+      text-decoration: underline;
+      color: #ff9933;
+    }
+    .highlight {
+      margin-top: 25px;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.08);
+      border-left: 5px solid #ffa513;
+      border-radius: 8px;
+    }
+    .highlight p {
+      font-size: 15px;
+    }
+    .highlight strong {
+      color: #ffa513;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #111;
+      padding: 20px 0;
+      text-align: center;
+      color: #d1dfdf;
+      font-size: 14px;
+    }
+    footer a {
+      color: #ffa513;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 600;
+    }
+    footer a:hover {
+      text-decoration: underline;
+      color: #ff9933;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <!-- Navbar -->
+    <div class="navbar">
+      <h2 class="logo">EduPath</h2>
+      <div class="menu">
+        <ul>
+          <li><a href="matric.html">Matric Resource</a></li>
+          <li><a href="#" id="logoutLink">Logout</a></li>
+          <li><a href="career.html">Careers Guidence</a></li>
+          <li><a href="uni.html">Universities & Colleges</a></li>
+          <li><a href="busarie.html">Bursaries & Scholarship</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="student.html">Student Stories</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+      <h1>1. Study Material <br>(Tutorials, Textbooks & Past Papers)</h1>
+      <ul>
+        <li>
+          <strong>Department of Basic Education (DBE):</strong>
+          <ul>
+            <li>
+              Past exam papers & memos: 
+              <a href="https://www.education.gov.za/Examinations/PastExamPapers/tabid/351/Default.aspx" target="_blank">
+                education.gov.za
+              </a>
+            </li>
+            <li>
+              Free textbooks (PDF CAPS curriculum): 
+              <a href="https://www.education.gov.za/Curriculum/LearningandTeachingSupportMaterials(LTSM)/DigitalContent.aspx" target="_blank">
+                Download CAPS Textbooks
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <strong>Mind the Gap Study Guides (DBE):</strong>  
+          <a href="https://www.education.gov.za/Curriculum/MindtheGapStudyGuides.aspx" target="_blank">
+            Download Guides
+          </a>
+        </li>
+
+        <li>
+          <strong>YouTube Channels:</strong>
+          <ul>
+            <li>
+              <a href="https://www.youtube.com/@MindsetLearn" target="_blank">Mindset Learn</a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/@MathsAndScienceSA" target="_blank">Maths & Science SA tutorials</a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <strong>App Resources:</strong>  
+          <a href="https://play.google.com/store/search?q=matric%20study%20apps&c=apps" target="_blank">
+            Explore Study Apps (Google Play)
+          </a>
+        </li>
+      </ul>
+
+      <!-- Highlight Box -->
+      <div class="highlight">
+        <p>👉 Would you like me to <strong>create a neat guide (PDF/Word)</strong> with all these resources and clickable links for you, so you can easily share it with other matric learners?</p>
+      </div>
+    </div>
+  </div>
+  <script>
+    // require signed-in user and wire logout link
+    (function(){
+      try{
+        const token = localStorage.getItem('idToken');
+        if (!token) return window.location.href = 'homeeee.html';
+        const logout = document.getElementById('logoutLink');
+        if (logout) {
+          logout.addEventListener('click', () => { localStorage.removeItem('idToken'); window.location.href = 'homeeee.html'; });
+        }
+      } catch (e) { window.location.href = 'homeeee.html'; }
+    })();
+  </script>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 EduPath. All Rights Reserved. 
+    <br>
+    <a href="privacy.html">Privacy Policy</a> | 
+    <a href="terms.html">Terms & Conditions</a> | 
+    <a href="contact.html">Contact</a>
+  </footer>
+</body>
+</html>
+

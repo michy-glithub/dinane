@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Universities & Colleges</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family: Poppins, Arial, sans-serif;}
+    body { background: #111; color: #eee;}
+    .main {
+      background: linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('uni.jpeg');
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      padding-bottom: 50px;
+    }
+    .navbar {
+      width: 1200px;
+      height: 85px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo { color:
+         #ffa519;
+          font-size: 45px; 
+          font-weight: bold;
+          margin-right: 60px;
+        }
+    .menu ul {
+      display: flex;
+      list-style: none;
+      gap: 40px;
+    }
+    .menu ul li a {
+      text-decoration: none;
+      color: rgb(209, 223, 223);
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .menu ul li a:hover { color: orange; }
+
+    header {
+      text-align: center;
+      padding: 50px 20px 30px;
+    }
+    header h1 { font-size: 50px; color: #ff7200; margin-bottom: 10px;}
+    header p { font-size: 20px; max-width: 800px; margin: auto; color:#f0f0f0;}
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    section {
+      background: rgba(0,0,0,0.7);
+      padding: 30px;
+      border-radius: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+    }
+    section h2 { font-size: 28px; color:#ff7200; margin-bottom:15px;}
+    section p, section ul { font-size: 16px; line-height: 1.6;}
+    section ul { list-style-type: disc; margin: 0; padding-left: 25px; }
+    section ul li { margin-bottom: 12px; }
+
+    .resources a {
+      display: inline-block;
+      margin: 10px 10px 0 0;
+      padding: 10px 18px;
+      background: #ff7200;
+      color: black;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+    .resources a:hover { background: white; color: black; }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: rgba(0,0,0,0.85);
+      color: #ccc;
+      border-top: 1px solid rgba(255,255,255,0.2);
+    }
+
+    @media (max-width:900px) {
+      header h1 { font-size: 40px;}
+      section h2 { font-size: 24px;}
+      .menu ul { gap: 20px;}
+    }
+
+    @media (max-width:700px){
+      .resources a { margin-bottom:10px;}
+      .menu { display:none;}
+    }
+    /* Simple modal styles for applied confirmation */
+    .modal-overlay{ position:fixed; inset:0; background:rgba(0,0,0,0.6); display:none; align-items:center; justify-content:center; z-index:1000; }
+    .modal{ background:#fff; color:#111; padding:20px; border-radius:8px; width:90%; max-width:420px; box-shadow:0 10px 30px rgba(0,0,0,0.5); }
+    .modal h3{ margin:0 0 10px; font-size:18px; color:#ff7200; }
+    .modal p{ margin:0 0 16px; }
+    .modal .buttons{ display:flex; gap:10px; justify-content:flex-end; }
+    .btn{ padding:8px 12px; border-radius:6px; border:0; cursor:pointer; font-weight:600; }
+    .btn-primary{ background:#ff7200; color:#000; }
+    .btn-secondary{ background:#eee; color:#111; }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <div class="navbar">
+      <div class="logo">EduPath</div>
+      <div class="menu">
+        <ul>
+          <li><a href="#" id="logoutLink">Logout</a></li>
+          <li><a href="matric.html">Matric Resources</a></li>
+          <li><a href="career.html">Careers Guidance</a></li>
+          <li><a href="uni.html">Universities & Colleges</a></li>
+          <li><a href="busarie.html">Bursaries & Scholarships</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="student.html">Student Stories</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <header>
+      <h1>Universities & Colleges in South Africa</h1>
+      <p>Discover top institutions, their application links, and essential tips to help you start your academic journey successfully!</p>
+    </header>
+
+    <div class="container">
+      <!-- Top Universities -->
+      <section>
+        <h2>Top Universities in South Africa</h2>
+        <ul>
+          <li><strong>University of Cape Town (UCT)</strong> – <a class="apply-link" data-university-id="uct" href="https://www.uct.ac.za/apply" target="_blank">Apply Here</a></li>
+          <li><strong>University of Pretoria (UP)</strong> – <a class="apply-link" data-university-id="up" href="https://www.up.ac.za/study-at-up/apply" target="_blank">Apply Here</a></li>
+          <li><strong>Stellenbosch University</strong> – <a class="apply-link" data-university-id="stellenbosch" href="https://www.sun.ac.za/english/Pages/default.aspx" target="_blank">Apply Here</a></li>
+          <li><strong>University of the Witwatersrand (Wits)</strong> – <a class="apply-link" data-university-id="wits" href="https://www.wits.ac.za/applications/" target="_blank">Apply Here</a></li>
+          <li><strong>University of Johannesburg (UJ)</strong> – <a class="apply-link" data-university-id="uj" href="https://www.uj.ac.za/apply/" target="_blank">Apply Here</a></li>
+          <li><strong>University of KwaZulu-Natal (UKZN)</strong> – <a class="apply-link" data-university-id="ukzn" href="https://www.ukzn.ac.za/apply/" target="_blank">Apply Here</a></li>
+          <li><strong>Rhodes University</strong> – <a class="apply-link" data-university-id="rhodes" href="https://www.ru.ac.za/studyhere/" target="_blank">Apply Here</a></li>
+          <li><strong>North-West University (NWU)</strong> – <a class="apply-link" data-university-id="nwu" href="https://www.nwu.ac.za/study" target="_blank">Apply Here</a></li>
+          <li><strong>University of the Western Cape (UWC)</strong> – <a class="apply-link" data-university-id="uwc" href="https://www.uwc.ac.za/apply/" target="_blank">Apply Here</a></li>
+          <li><strong>University of South Africa (UNISA)</strong> – <a class="apply-link" data-university-id="unisa" href="https://www.unisa.ac.za/" target="_blank">Apply Here</a></li>
+          <li><strong>University of Fort Hare (UFH)</strong> – <a class="apply-link" data-university-id="ufh" href="https://www.ufh.ac.za/apply" target="_blank">Apply Here</a></li>
+          <li><strong>Vaal University of Technology (VUT)</strong> – <a class="apply-link" data-university-id="vut" href="https://www.vut.ac.za/" target="_blank">Apply Here</a></li>
+          <li><strong>Mangold University</strong> – <a class="apply-link" data-university-id="mangold" href="#" target="_blank">Apply Here</a></li>
+          <li><strong>University of Mpumalanga (UMP)</strong> – <a class="apply-link" data-university-id="ump" href="https://www.ump.ac.za/study-here/apply/" target="_blank">Apply Here</a></li>
+          <li><strong>Sefako Makgatho Health Sciences University (SMU)</strong> – <a class="apply-link" data-university-id="smu" href="https://www.smu.ac.za/apply/" target="_blank">Apply Here</a></li>
+          <li><strong>Sol Plaatje University (SPU)</strong> – <a class="apply-link" data-university-id="spu" href="https://www.spu.ac.za/study/" target="_blank">Apply Here</a></li>
+          <li><strong>University of Zululand (UNIZULU)</strong> – <a class="apply-link" data-university-id="unizulu" href="https://www.unizulu.ac.za/apply/" target="_blank">Apply Here</a></li>
+          <li><strong>Walter Sisulu University (WSU)</strong> – <a class="apply-link" data-university-id="wsu" href="https://www.wsu.ac.za/apply" target="_blank">Apply Here</a></li>
+     </ul>
+        </ul>
+      </section>
+
+      <!-- Top Colleges -->
+      <section>
+        <h2>Top Colleges & Technical Institutions</h2>
+        <ul>
+          <li><strong>Cape Peninsula University of Technology (CPUT)</strong> – <a class="apply-link" data-university-id="cput" href="https://www.cput.ac.za/" target="_blank">Apply Here</a></li>
+          <li><strong>Durban University of Technology (DUT)</strong> – <a class="apply-link" data-university-id="dut" href="https://www.dut.ac.za/" target="_blank">Apply Here</a></li>
+          <li><strong>Mangosuthu University of Technology (MUT)</strong> – <a class="apply-link" data-university-id="mut" href="https://www.mut.ac.za/" target="_blank">Apply Here</a></li>
+          <li><strong>Nelson Mandela University (NMU)</strong> – <a class="apply-link" data-university-id="nmu" href="https://www.nmmu.ac.za/" target="_blank">Apply Here</a></li>
+          <li><strong>Tshwane University of Technology (TUT)</strong> – <a class="apply-link" data-university-id="tut" href="https://www.tut.ac.za/" target="_blank">Apply Here</a></li>
+          <li><strong>Rosebank College</strong> – <a class="apply-link" data-university-id="rosebank" href="https://www.rosebankcollege.co.za/" target="_blank">Apply Here</a></li>
+          <li><strong>False Bay TVET College</strong> – <a class="apply-link" data-university-id="falsebay" href="https://www.falsebaycollege.co.za/" target="_blank">Apply Here</a></li>
+          <li><strong>Elangeni TVET College</strong> – <a class="apply-link" data-university-id="elangeni" href="https://www.elangeni.edu.za/" target="_blank">Apply Here</a></li>
+          <li><strong>Central Johannesburg TVET College</strong> – <a class="apply-link" data-university-id="cjc" href="https://cjc.edu.za/" target="_blank">Apply Here</a></li>
+
+        </ul>
+      </section>
+
+      <!-- Informative Section -->
+      <section>
+        <h2>Important Information for Applicants</h2>
+        <ul>
+          <li>Application deadlines: Typically between April and September each year. Check individual websites.</li>
+          <li>Admission Requirements: NSC certificate or equivalent, valid ID, and application fees.</li>
+          <li>Financial Aid: Bursaries and scholarships available (e.g., NSFAS).</li>
+          <li>International Students: Ensure a valid passport, study visa, and English proficiency.</li>
+          <li>Tips: Research programs, prepare documents early, seek guidance, and stay organized.</li>
+        </ul>
+      </section>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 EduPath | Designed for Students</p>
+    </footer>
+  </div>
+  <!-- Debug: Force review button -->
+  <div style="position:fixed; right:12px; bottom:12px; z-index:1100;">
+    <button id="reviewClickedBtn" style="padding:8px 12px; background:#ff7200; color:#000; border-radius:6px; border:0; font-weight:700; cursor:pointer;">Review clicked universities</button>
+  </div>
+  <script>
+    (function(){
+      try{
+        const token = localStorage.getItem('idToken');
+        if (!token) return window.location.href = 'homeeee.html';
+        const logout = document.getElementById('logoutLink');
+        if (logout) logout.addEventListener('click', () => { localStorage.removeItem('idToken'); window.location.href = 'homeeee.html'; });
+      }catch(e){ window.location.href = 'homeeee.html'; }
+    })();
+  </script>
+  <script>
+    // Track clicks on university apply links and send to backend
+    (function(){
+      const API = 'http://localhost:3001/api/universities/click';
+
+      function track(universityId){
+        try{
+          const token = localStorage.getItem('idToken');
+          if (!token) return;
+          fetch(API, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': 'Bearer ' + token
+            },
+            body: JSON.stringify({ universityId })
+          }).then(r => {
+            if (!r.ok) console.warn('Failed to record university click', r.status);
+          }).catch(err => console.warn('Error sending click', err));
+        }catch(e){ console.warn('track error', e); }
+      }
+
+      document.addEventListener('click', function(e){
+        const el = e.target.closest && e.target.closest('.apply-link');
+        if (!el) return;
+        const id = el.dataset && el.dataset.universityId;
+        if (!id) return;
+        track(id);
+      }, { passive: true });
+    })();
+  </script>
+  <!-- Modal for confirming applied universities -->
+  <div class="modal-overlay" id="appliedModal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="appliedTitle">
+      <h3 id="appliedTitle">Confirm application</h3>
+      <p id="appliedMessage">Did you successfully apply to <span id="appliedName"></span>?</p>
+      <div class="buttons">
+        <button class="btn btn-secondary" id="appliedNo">No</button>
+        <button class="btn btn-primary" id="appliedYes">Yes</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    // On page load: ask user whether previous clicks turned into actual applications
+    (function(){
+  const CLICK_API = 'http://localhost:3001/api/universities/click';
+  const APPLIED_API = 'http://localhost:3001/api/universities/applied';
+
+      function getToken(){
+        return localStorage.getItem('idToken');
+      }
+
+      function getDisplayNameForId(id){
+        // find the element with data-university-id and read the strong text (the university name)
+        try{
+          const el = document.querySelector('[data-university-id="'+id+'"]');
+          if (!el) return id;
+          const li = el.closest && el.closest('li');
+          if (!li) return id;
+          const strong = li.querySelector && li.querySelector('strong');
+          if (strong && strong.textContent) return strong.textContent.trim();
+          // fallback to link text
+          if (el.textContent) return el.textContent.trim();
+          return id;
+        }catch(e){ return id; }
+      }
+
+      async function fetchJson(url, token){
+        const res = await fetch(url, { headers: { 'Authorization': 'Bearer ' + token } });
+        if (!res.ok) throw new Error('Fetch failed: ' + res.status);
+        return res.json();
+      }
+
+      async function postJson(url, token, body){
+        const res = await fetch(url, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token
+          },
+          body: JSON.stringify(body)
+        });
+        if (!res.ok) {
+          const text = await res.text().catch(()=>null);
+          throw new Error('Post failed: ' + res.status + ' ' + (text||''));
+        }
+        return res.json().catch(()=>null);
+      }
+
+      async function runPromptFlow(force){
+        const token = getToken();
+        if (!token) return; // not logged in or token missing
+
+        let clicked = [];
+        try{
+          const c = await fetchJson(CLICK_API, token);
+          clicked = c && c.universityIds ? c.universityIds : [];
+        }catch(e){ console.warn('Could not fetch clicked universities', e); return; }
+
+        // Keep track of already prompted items in localStorage so we don't re-ask
+        const promptedRaw = localStorage.getItem('appliedPrompted');
+        let prompted = promptedRaw ? JSON.parse(promptedRaw) : {};
+
+        // Build a queue of ids to prompt (do NOT fetch applied list; rely on prompted state)
+        const queue = [];
+        for (const id of clicked){
+          if (!id) continue;
+          if (!force && prompted[id]) continue; // already asked unless forcing
+          queue.push(id);
+        }
+
+        console.log('runPromptFlow', { clicked, prompted, queue, force });
+
+        if (queue.length === 0) return;
+
+        // modal elements
+        const overlay = document.getElementById('appliedModal');
+        const nameEl = document.getElementById('appliedName');
+        const yesBtn = document.getElementById('appliedYes');
+        const noBtn = document.getElementById('appliedNo');
+
+        function showModalFor(id){
+          return new Promise((resolve) => {
+            const name = getDisplayNameForId(id);
+            if (nameEl) nameEl.textContent = name;
+            if (overlay) overlay.style.display = 'flex';
+
+            function cleanup(){
+              if (overlay) overlay.style.display = 'none';
+              yesBtn.removeEventListener('click', onYes);
+              noBtn.removeEventListener('click', onNo);
+            }
+
+            function onYes(){ cleanup(); resolve(true); }
+            function onNo(){ cleanup(); resolve(false); }
+
+            yesBtn.addEventListener('click', onYes);
+            noBtn.addEventListener('click', onNo);
+          });
+        }
+
+        // Process queue sequentially
+        for (const id of queue){
+          try{
+            const confirmed = await showModalFor(id);
+            prompted[id] = true; // mark as asked regardless
+            try{ localStorage.setItem('appliedPrompted', JSON.stringify(prompted)); }catch(e){}
+
+            if (confirmed){
+              try{
+                await postJson(APPLIED_API, token, { universityId: id });
+                // temporary inline feedback via console
+                console.log('Recorded applied for', id);
+
+                // Refetch applied list and update UI so buttons reflect the change
+                try{
+                  const r = await fetch(APPLIED_API, { headers: { 'Authorization': 'Bearer ' + token } });
+                  if (r.ok){
+                    const dd = await r.json();
+                    const appliedIdsRefreshed = dd && dd.appliedIds ? dd.appliedIds : [];
+                    if (appliedIdsRefreshed.length) markApplied(appliedIdsRefreshed);
+                  }
+                }catch(e){
+                  console.warn('Could not refresh applied universities after confirm', e);
+                }
+              }catch(e){
+                console.warn('Failed to record applied university', e);
+              }
+            }
+          }catch(e){ console.warn('Prompt flow error', e); }
+        }
+      }
+
+      // Run after a small delay so page is interactive
+      document.addEventListener('DOMContentLoaded', function(){
+        // First, mark any universities already recorded as applied
+        setTimeout(() => { 
+          // fetch applied list and mark buttons
+          (async function(){
+            try{
+              const token = getToken();
+              if (!token) return;
+              const res = await fetch(APPLIED_API, { headers: { 'Authorization': 'Bearer ' + token } });
+              if (!res.ok) return;
+              const data = await res.json();
+              const appliedIds = data && data.appliedIds ? data.appliedIds : [];
+              if (appliedIds.length) markApplied(appliedIds);
+            }catch(e){ console.warn('Could not load applied universities', e); }
+          })().catch(e=>console.warn(e));
+
+          // then run the prompt flow
+          setTimeout(() => { runPromptFlow().catch(e=>console.warn(e)); }, 0);
+        }, 400);
+        // wire the debug button
+        const reviewBtn = document.getElementById('reviewClickedBtn');
+        if (reviewBtn) reviewBtn.addEventListener('click', ()=> runPromptFlow(true).catch(e=>console.warn(e)));
+      });
+    })();
+  </script>
+  <script>
+    // Utility to mark apply links as applied
+    function markApplied(appliedIds){
+      try{
+        if (!Array.isArray(appliedIds)) return;
+        for (const id of appliedIds){
+          if (!id) continue;
+          const el = document.querySelector('[data-university-id="'+id+'"]');
+          if (!el) continue;
+          // style the link to indicate applied
+          el.textContent = 'Applied';
+          el.classList.remove('apply-link');
+          el.setAttribute('aria-disabled','true');
+          el.style.pointerEvents = 'none';
+          el.style.opacity = '0.7';
+          // replace href so it doesn't navigate away
+          try{ el.removeAttribute('href'); }catch(e){}
+          // optionally add a small applied badge
+          const li = el.closest && el.closest('li');
+          if (li && !li.querySelector('.applied-badge')){
+            const span = document.createElement('span');
+            span.className = 'applied-badge';
+            span.textContent = ' ✓ Applied';
+            span.style.color = '#90ee90';
+            span.style.fontWeight = '700';
+            span.style.marginLeft = '8px';
+            li.appendChild(span);
+          }
+        }
+      }catch(e){ console.warn('markApplied error', e); }
+    }
+  </script>
+</body>
+</html>
+

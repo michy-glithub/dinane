@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up — EduPath</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;font-family:Poppins,Arial,sans-serif}
+    body{background:#111;color:#eee;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+    .card{width:100%;max-width:520px;background:rgba(0,0,0,0.75);padding:28px;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.6)}
+    h1{color:#ff7200;margin-bottom:12px;font-size:24px;text-align:center}
+    p.lead{color:#dcdcdc;margin-bottom:18px;text-align:center}
+    label{display:block;font-weight:600;margin-bottom:6px;color:#e6e6e6}
+    input{width:100%;padding:10px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);background:#0f0f0f;color:#fff;margin-bottom:14px}
+    .row{display:flex;gap:12px}
+    .btn{display:inline-block;background:#ff7200;color:#000;padding:10px 14px;border-radius:8px;font-weight:700;border:none;cursor:pointer}
+    .btn:disabled{opacity:.6;cursor:not-allowed}
+    .muted{color:#bdbdbd;font-size:13px;margin-top:10px}
+    .message{margin-top:12px;padding:10px;border-radius:8px}
+    .message.success{background:#e6ffea;color:#064e2a}
+    .message.error{background:#ffe6e6;color:#5a0505}
+    a.inline{color:#ffa519;text-decoration:none;font-weight:600}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Create an account</h1>
+    <p class="lead">Sign up to access bursaries, universities and personalised content.</p>
+
+    <form id="signupForm" autocomplete="off">
+      <label for="fullName">Full name</label>
+      <input id="fullName" name="fullName" type="text" required placeholder="Jane Doe" />
+
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required placeholder="you@example.com" />
+
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" required minlength="6" placeholder="Minimum 6 characters" />
+
+      <label for="phone">Phone (E.164 e.g. +27123456789)</label>
+      <input id="phone" name="phone" type="tel" placeholder="+27123456789" />
+
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:6px">
+        <button type="submit" class="btn" id="submitBtn" aria-live="polite" aria-busy="false">
+          <span class="spinner" aria-hidden="true" style="display:none;width:16px;height:16px;border:2px solid rgba(0,0,0,0.15);border-top-color:#000;border-radius:50%;margin-right:8px;vertical-align:middle;animation:spin .8s linear infinite"></span>
+          <span class="btn-text">Sign up</span>
+        </button>
+        <div class="muted">Already have an account? <a class="inline" href="homeeee.html">Log in</a></div>
+      </div>
+
+      <div id="msg" aria-live="polite"></div>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('signupForm');
+    const msg = document.getElementById('msg');
+    const submitBtn = document.getElementById('submitBtn');
+    const spinner = submitBtn.querySelector('.spinner');
+    const btnText = submitBtn.querySelector('.btn-text');
+
+    // small keyframe added via JS-insert to avoid editing top CSS block heavily
+    (function addKeyframes(){
+      const css = '@keyframes spin { to { transform: rotate(360deg); } }';
+      const s = document.createElement('style'); s.appendChild(document.createTextNode(css));
+      document.head.appendChild(s);
+    })();
+
+    function showMessage(text, type='error') {
+      msg.innerHTML = '';
+      const d = document.createElement('div');
+      d.className = 'message ' + (type === 'success' ? 'success' : 'error');
+      d.textContent = text;
+      msg.appendChild(d);
+    }
+
+    form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  // start loading state
+  submitBtn.disabled = true;
+  submitBtn.setAttribute('aria-busy', 'true');
+  if (spinner) spinner.style.display = 'inline-block';
+  if (btnText) btnText.textContent = 'Signing up...';
+  msg.innerHTML = '';
+
+      const fullName = form.fullName.value.trim();
+      const email = form.email.value.trim();
+      const password = form.password.value;
+      const phone = form.phone.value.trim() || null;
+
+      if (!fullName || !email || !password) {
+        showMessage('Full name, email and password are required.');
+        submitBtn.disabled = false;
+        return;
+      }
+
+      try {
+        const res = await fetch('http://localhost:3001/api/signup', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ fullName, email, password, phone })
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Signup failed');
+
+        showMessage('Signup successful. Redirecting to login...', 'success');
+        setTimeout(() => window.location.href = 'homeeee.html', 1400);
+      } catch (err) {
+        showMessage(err.message || 'Network error');
+      } finally {
+        // restore button state
+        submitBtn.disabled = false;
+        submitBtn.setAttribute('aria-busy', 'false');
+        if (spinner) spinner.style.display = 'none';
+        if (btnText) btnText.textContent = 'Sign up';
+      }
+    });
+  </script>
+</body>
+</html>
