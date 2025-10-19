@@ -2,9 +2,10 @@ require('dotenv').config();
 const express = require('express');
 const admin = require('firebase-admin');
 const axios = require('axios');
+const serverless = require('serverless-http'); // 🧩 Added for Vercel
 
-// Initialize Firebase Admin
-const serviceAccount = require('../serviceAccountKey.json'); // Adjusted relative path
+// === Initialize Firebase Admin ===
+const serviceAccount = require('./serviceAccountKey.json'); // now correct relative path
 const FIREBASE_WEB_API_KEY = process.env.FIREBASE_WEB_API_KEY;
 
 if (!admin.apps.length) {
@@ -22,9 +23,7 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,PATCH,DELETE,OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, Accept');
-  if (req.method === 'OPTIONS') {
-    return res.sendStatus(204);
-  }
+  if (req.method === 'OPTIONS') return res.sendStatus(204);
   next();
 });
 
@@ -162,7 +161,7 @@ app.post('/api/login', async (req, res) => {
   }
 });
 
-// ---- Clicked bursaries ----
+// ---- Bursary Routes ----
 app.post('/api/bursaries/click', verifyFirebaseToken, async (req, res) => {
   const { bursaryId } = req.body || {};
   if (!requireString(req.body, 'bursaryId')) {
@@ -170,8 +169,7 @@ app.post('/api/bursaries/click', verifyFirebaseToken, async (req, res) => {
   }
   try {
     const uid = req.uid;
-    await db
-      .collection('users')
+    await db.collection('users')
       .doc(uid)
       .collection('clickedBursaries')
       .doc(bursaryId.trim())
@@ -186,8 +184,7 @@ app.post('/api/bursaries/click', verifyFirebaseToken, async (req, res) => {
 app.get('/api/bursaries/click', verifyFirebaseToken, async (req, res) => {
   try {
     const uid = req.uid;
-    const snap = await db
-      .collection('users')
+    const snap = await db.collection('users')
       .doc(uid)
       .collection('clickedBursaries')
       .get();
@@ -199,7 +196,7 @@ app.get('/api/bursaries/click', verifyFirebaseToken, async (req, res) => {
   }
 });
 
-// ---- University routes ----
+// ---- University Routes ----
 app.post('/api/universities/click', verifyFirebaseToken, async (req, res) => {
   const { universityId } = req.body || {};
   if (!requireString(req.body, 'universityId')) {
@@ -207,8 +204,7 @@ app.post('/api/universities/click', verifyFirebaseToken, async (req, res) => {
   }
   try {
     const uid = req.uid;
-    await db
-      .collection('users')
+    await db.collection('users')
       .doc(uid)
       .collection('clickedUniversities')
       .doc(universityId.trim())
@@ -223,8 +219,7 @@ app.post('/api/universities/click', verifyFirebaseToken, async (req, res) => {
 app.get('/api/universities/click', verifyFirebaseToken, async (req, res) => {
   try {
     const uid = req.uid;
-    const snap = await db
-      .collection('users')
+    const snap = await db.collection('users')
       .doc(uid)
       .collection('clickedUniversities')
       .get();
@@ -261,8 +256,7 @@ app.post('/api/universities/applied', verifyFirebaseToken, async (req, res) => {
 app.get('/api/universities/applied', verifyFirebaseToken, async (req, res) => {
   try {
     const uid = req.uid;
-    const snap = await db
-      .collection('users')
+    const snap = await db.collection('users')
       .doc(uid)
       .collection('appliedUniversities')
       .get();
@@ -277,8 +271,7 @@ app.get('/api/universities/applied', verifyFirebaseToken, async (req, res) => {
 app.get('/api/universities/applied/details', verifyFirebaseToken, async (req, res) => {
   try {
     const uid = req.uid;
-    const snap = await db
-      .collection('users')
+    const snap = await db.collection('users')
       .doc(uid)
       .collection('appliedUniversities')
       .get();
@@ -294,11 +287,8 @@ app.get('/api/universities/applied/details', verifyFirebaseToken, async (req, re
     const universities = [];
     const missingIds = [];
     uniDocs.forEach((docSnap, idx) => {
-      if (!docSnap.exists) {
-        missingIds.push(appliedIds[idx]);
-        return;
-      }
-      universities.push({ id: docSnap.id, ...docSnap.data() });
+      if (!docSnap.exists) missingIds.push(appliedIds[idx]);
+      else universities.push({ id: docSnap.id, ...docSnap.data() });
     });
 
     return res.status(200).json({ universities, missingIds });
@@ -308,5 +298,12 @@ app.get('/api/universities/applied/details', verifyFirebaseToken, async (req, re
   }
 });
 
-// ====== Export for Vercel ======
+// ====== Serverless Export for Vercel ======
 module.exports = app;
+module.exports.handler = serverless(app);
+
+// ====== Local Run (optional) ======
+if (process.env.NODE_ENV !== 'production') {
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => console.log(`Local server running on http://localhost:${PORT}`));
+}
